@@ -12,8 +12,9 @@ setup(
     install_requires=[
     ],
     long_description=open('README.rst').read() + '\n' + open('CHANGES.rst').read(),
-    name='',
+    name='collective.sampledata',
     namespace_packages=[
+        'collective',
     ],
     packages=find_packages(),
     version=VERSION,
