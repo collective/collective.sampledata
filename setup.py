@@ -7,6 +7,7 @@ setup(
     author='Alex Clark',
     author_email='aclark@aclark.net',
     entry_points={
+        'z3c.autoinclude.plugin': 'target = plone',
     },
     include_package_data=True,
     install_requires=[
