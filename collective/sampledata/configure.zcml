@@ -1,7 +1,7 @@
 <configure xmlns="http://namespaces.zope.org/zope" xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
-    <browser:page class=".hello.Hello" for="*" name="hello" permission="zope2.Public"
-        template="hello.pt" />
+    <browser:page class=".sampledata.SampleData" for="*" name="sampledata" permission="zope2.Public"
+        template="sampledata.pt" />
     <genericsetup:registerProfile directory="profiles/default" name="default"
         provides="Products.GenericSetup.interfaces.EXTENSION" />
 </configure>
