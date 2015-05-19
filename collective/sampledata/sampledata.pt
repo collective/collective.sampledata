@@ -1,17 +1,23 @@
 <div metal:use-macro="here/main_template/macros/master">
     <div metal:fill-slot="main">
-        <h1>Create Sample Data</h1>
-        <p>Sample data will be created here: <a tal:attributes="href python: here.absolute_url() + '/sample-data'" tal:content="python: here.absolute_url() + '/sample-data'"></a>.</p>
+        <h1><a tal:attributes="href python: here.absolute_url() + '/@@sampledata'">Sample Data</a></h1>
+        <div tal:condition="here/REQUEST/form">
+<dl class="portalMessage info">
+<dt>Info</dt>
+<dd>Sample data created here: <a tal:attributes="href python: here.absolute_url() + '/sample-data'" tal:content="python: here.absolute_url() + '/sample-data'"></a>.</dd>
+</dl>
+       </div tal:condition>
         <form tal:attributes="action python: here.absolute_url() + '/@@sampledata'" method="POST">
             <h2>Content</h2>
             <ul style="list-style-type: none; margin: 0; padding: 0" tal:repeat="content_type here/plone_utils/getUserFriendlyTypes">
                 <li><input name="checkbox:boolean" type="checkbox">&nbsp;<span tal:content="content_type"></span>&nbsp;<input tal:attributes="name python: content_type + ':int'" style="width: 20px" type="text" value="1"></li>
             </ul>
             <h2>Users</h2>
-            <input style="width: 20px" type="text" value="1">
+            <input style="width: 20px" type="text" value="0">
             <h2>Groups</h2>
-            <input style="width: 20px" type="text" value="1">
+            <input style="width: 20px" type="text" value="0">
             <br />
+            <h2>Create</h2>
             <input type="submit" value="Create sample data">
         </form>
     </div>
