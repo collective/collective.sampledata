@@ -5,7 +5,7 @@
         <form tal:attributes="action python: here.absolute_url() + '/@@sampledata'" method="POST">
             <h2>Content</h2>
             <ul style="list-style-type: none; margin: 0; padding: 0" tal:repeat="content_type here/plone_utils/getUserFriendlyTypes">
-                <li><input type="checkbox">&nbsp;<span tal:content="content_type"></span>&nbsp;<input style="width: 20px" type="text" value="1"></li>
+                <li><input name="checkbox:boolean" type="checkbox">&nbsp;<span tal:content="content_type"></span>&nbsp;<input tal:attributes="name python: content_type + ':int'" style="width: 20px" type="text" value="1"></li>
             </ul>
             <h2>Users</h2>
             <input style="width: 20px" type="text" value="1">
