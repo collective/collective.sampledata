@@ -1,7 +1,7 @@
 <div metal:use-macro="here/main_template/macros/master">
     <div metal:fill-slot="main">
         <h1>Create Sample Data</h1>
-        <p>Create sample data here: <a tal:attributes="href python: here.absolute_url() + '/sample-data'" tal:content="python: here.absolute_url() + '/sample-data'"></a>.</p>
+        <p>Sample data will be created here: <a tal:attributes="href python: here.absolute_url() + '/sample-data'" tal:content="python: here.absolute_url() + '/sample-data'"></a>.</p>
         <form tal:attributes="action python: here.absolute_url() + '/@@sampledata'" method="POST">
             <h2>Content</h2>
             <ul style="list-style-type: none; margin: 0; padding: 0" tal:repeat="content_type here/plone_utils/getUserFriendlyTypes">
